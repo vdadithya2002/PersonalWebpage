@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="{% static 'App_xx_92/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'resume' %}">Resume</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+    <main>
+        <section>
+            <p>Name-P.vijaya Durga Adithya</p>
+            <p>Studing-AI&DS</p>
+            <p>Contact Insta for more details</p>
+        </section>
+    </main>
+</body>
+</html>

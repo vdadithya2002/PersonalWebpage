@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage - P. Adithya</title>
+    <link rel="stylesheet" href="{% static 'App_xx_92/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'resume' %}">Resume</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><button id="theme-toggle" aria-label="Toggle theme">🌗</button></li>
+        </ul>
+    </nav>
+
+    <!-- Header with Photo -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="slide-in">Hello, I’m P. Adithya</h1>
+            <p class="slide-in delay-1">Engineering Student in AI & Data Science</p>
+            <img src="{% static 'App_xx_92/photo.jpg' %}" alt="My Photo" class="profile-photo slide-in delay-2">
+            <p class="slide-in delay-3">Welcome to my personal webpage. Here you'll find details about my academic background, projects, and hobbies.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <h2>About Me</h2>
+            <p>I am an engineering student specializing in AI and Data Science. My passion lies in leveraging cutting-edge technologies to solve real-world problems. I am eager to explore various domains, from machine learning to big data, and contribute to innovation in these fields.</p>
+        </section>
+
+        <!-- Studies Section -->
+        <section id="studies" class="section studies">
+            <h2>Studies</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Bachelor of Technology (B.Tech)</h3>
+                    <p>KLU University, India</p>
+                    <p>Currently pursuing my degree in AI & Data Science. The program includes in-depth coursework in machine learning, deep learning, statistics, and data analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Mahabharat Storytelling App</h3>
+                    <p>A mobile app that brings the epic Mahabharata to life through interactive storytelling, combining text, images, and voice.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="project-card">
+                    <h3>EV Charging Station Locator</h3>
+                    <p>An app that helps users find electric vehicle charging stations nearby, with features like route planning and real-time availability updates.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section achievements">
+            <h2>Achievements</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Patiprated in Expo Contest</h3>
+                    <p>2024</p>
+                    <p>Attend expo with our Mahabhharat app.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="section hobbies">
+            <h2>Hobbies</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Reading</h3>
+                    <p>Reading Non-Ficition books.</p>
+                </div>
+                <div class="card">
+                    <h3>Gaming</h3>
+                    <p>Enjoy competitive gaming and strategy games. Gaming helps me relax and also sharpens my strategic thinking.</p>
+                </div>
+                <div class="card">
+                    <h3>Music</h3>
+                    <p>Enjoy listening to music from various genres..</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <form action="{% url 'contact_submit' %}" method="post">
+                {% csrf_token %}
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </section>
+
+        <!-- Social Media Links -->
+        <section class="social-media">
+            <h3>Connect with Me</h3>
+            <a href="https://www.instagram.com/the.unseen.man?igsh=MWJnbDVoczJrMzR1NQ==" target="_blank">Instagram</a> |
+            <a href="https://github.com/vdadithya2002" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+        </section>
+    </footer>
+
+    <!-- JavaScript for Theme Toggle -->
+    <script src="{% static 'App_xx_92/js/theme-toggle.js' %}"></script>
+</body>
+</html>
