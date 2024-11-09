@@ -1,0 +1,219 @@
+/* Color Variables */
+:root {
+    --primary-color: #3f72af;
+    --secondary-color: #333;
+    --accent-color: #ffab00;
+    --light-background: #f0f4f8;
+    --light-gradient: #d9e2ec;
+    --dark-background: #121212;
+    --text-color-light: #f1f1f1;
+    --text-color-dark: #333;
+    --hover-color: #ffcc00;
+}
+
+/* Base Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, var(--light-background), var(--light-gradient));
+    color: var(--text-color-dark);
+    transition: background 0.3s, color 0.3s;
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 1em;
+}
+
+.navbar a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2em;
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 1em 0;
+    animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+header p:nth-of-type(2) {
+    animation-delay: 0.5s; /* Delayed animation for staggered effect */
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Sliding Animations */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Main Content */
+main {
+    padding: 2em;
+    text-align: left;
+    background: #49daf082;
+    border-radius: 8px; /* Modern card-style look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.intro {
+    margin-bottom: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease; /* Card hover effect */
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #49daf082;
+    color: #3f72af;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+footer .contact {
+    margin-bottom: 20px;
+}
+
+footer .social-media a {
+    color: #3f72af;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: var(--hover-color);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: var(--dark-background);
+    color: var(--text-color-light);
+}
+
+body.dark-mode .navbar,
+body.dark-mode footer {
+    background-color: var(--secondary-color);
+}
+
+body.dark-mode section {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Higher contrast shadow */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        position: static;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 0.5em 0;
+    }
+}
